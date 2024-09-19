@@ -8,4 +8,23 @@ document.getElementById('button-add-money').addEventListener('click', function(e
     const amountNumber = document.getElementById('amount-number').value;
     const digitNumber =document.getElementById('digit-number').value;
     console.log(amountNumber, digitNumber);
+    // step-3:verify pin number
+    // wrong way to validate pin number
+    if(digitNumber === '1234'){
+        console.log('adding to money added to account');
+        // step-4: get the current balance
+        const balance = document.getElementById('balance').innerText;
+        console.log(balance);
+        // step-5:addMoney input with balance
+        const addMoneyNumber = parseFloat(amountNumber);
+        const balanceNumber = parseFloat(balance);
+        const newBalance = addMoneyNumber + balanceNumber;
+        console.log(newBalance);
+        // step-6:update the balance
+        document.getElementById('balance').innerText=newBalance;
+    }
+    
+    else{
+        alert('fail to add money! please try again');
+    }
 })
